@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dados_paciente.css">
+  <title>Dados do Paciente</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(".formulario").submit(function(event) {
+        event.preventDefault(); // Impede o envio do formulário padrão
+
+        // Coleta os dados do formulário
+        var formData = $(this).serialize();
+
+        $.ajax({
+          type: "POST",
+          url: "paciente.php",
+          data: formData,
+          success: function(response) {
+            // Aqui você pode manipular a resposta da requisição
+            alert("Dados enviados com sucesso!");
+          },
+          error: function() {
+            alert("Erro ao enviar os dados.");
+          }
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="cabecalho">
+    
+        <div class="titulo">
+            Dados
+        </div>
+        <div class="subtitulo">
+            Paciente
+        </div>
+    
+  </div>
+  
+  <form class="formulario" method="post" >
+    <table class="tabela">
+      <TR BGCOLOR=#1E232C>
+        
+      </TR>
+      <tr>
+        <td>Nome:</td>
+        <td width="70%"><input type="text" name="nome" class="caixa"></td>
+      </tr>
+      <tr>
+        <td>RG/CPF:</td>
+        <td>
+          <input type="text" name="cpf" class="caixa">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Sexo:
+        </td>
+        <td>
+          <input type="radio" name="sexo" value="">
+          <input type="radio" name="sexo">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Idade:
+        </td>
+        <td>
+          <input type="number" name="idade" class="caixa1">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Fone:
+        </td>
+        <td>
+          <input type="text" name="telefone" class="caixa">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Local da Ocorrência:
+        </td>
+        <td>
+          <input type="text" name="local" class="caixa">
+        </td>
+      </tr>
+      <TR BGCOLOR=#1E232C>
+        <TD ALIGN="center" VALIGN="center" HEIGHT="40" COLSPAN="2">
+            <div class="cabecalho">
+    
+                <div class="titulo">
+                    Dados  
+                </div>
+                <div class="subtitulo">
+                    Acompanhante
+                </div>
+                
+            
+          </div>
+        </TD>
+      </TR>
+      <tr>
+        <td>
+          Nome:
+        </td>
+        <td>
+          <input type="text" name="nomeAcompanhante" class="caixa">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Idade:
+        </td>
+        <td>
+          <input type="number" name="idadeAcompanhante" class="caixa1">
+        </td>
+      </tr>
+    </table>
+   <input type="submit" name="enviar">
+  </form>
+</body>
+</html>

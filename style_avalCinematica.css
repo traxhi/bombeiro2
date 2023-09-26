@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+}
+.tabela{
+    width: 80%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+}
+table{
+    width:80%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+}
+.title21{
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+}
